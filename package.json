@@ -10,8 +10,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@protobuf-ts/grpcweb-transport": "^2.9.6",
+    "@protobuf-ts/plugin": "^2.9.6",
+    "grpc-tools": "^1.13.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^7.4.1",
+    "sass": "^1.86.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",

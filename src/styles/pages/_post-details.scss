@@ -1,0 +1,95 @@
+.create-comment-section {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    margin: 20px 0;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+
+    .section-header{
+        margin-top: 0;
+    }
+}
+
+.posted-comments{
+    .comments-header{
+
+    }
+    .comments-list{
+        .comment{
+            padding: 1rem;
+            border: 1px solid #bbb;
+            border-radius: 8px;
+            margin-bottom: 10px;
+
+            .comment-header{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 10px;
+
+                .username{
+                    font-size: 1.2rem;
+                    font-weight: 600;
+                    color: #444;
+                }
+                .delete-comment{
+                    cursor: pointer;
+                    width: 20px;
+                }
+            }
+            .text{
+                color: #555;
+                line-height: 1.4;
+            }
+        }
+    }
+}
+
+.likes-section{
+    display: flex;
+    align-items: center;
+    .likes{
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+
+        .like{
+            cursor: pointer;
+        }
+    }
+    .dislikes{
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        .dislike{
+            cursor: pointer;
+
+            &:hover{
+                fill: red;
+            }
+        }
+    }
+    img{
+        margin-right: 5px;
+        width: 30px;
+    }
+
+
+    .pressed-img{
+        display: none;
+    }
+    .unpressed-img{
+        display: block;
+    }
+
+    .pressed{
+        .pressed-img{
+            display: block;
+        }
+        .unpressed-img{
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,13 @@
+@use "./pages/posts-listing";
+@use "./pages/post-details";
+@use "./pages/edit-post";
+@use "./pages/create-post";
+@use "./pages/edit-profile";
+@use "./pages/login";
+@use "./pages/register";
+
+@use "./layout/layout";
+@use "./layout/header";
+
+@use "./utils/buttons";
+@use "./utils/forms";

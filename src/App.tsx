@@ -1,35 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Routes, Route, Navigate } from "react-router-dom";
+import LoginPage from "./pages/Login.tsx";
+import RegisterPage from "./pages/Register";
+import PostsListingPage from "./pages/PostsListing.tsx";
+import PostDetailsPage from "./pages/PostDetails.tsx";
+import CreatePostPage from "./pages/CreatePostPage.tsx";
+import DefaultLayout from "./layouts/DefaultLayout.tsx";
+import EditProfile from "./pages/EditProfile";
+import EditPost from "./pages/EditPost.tsx";
+import AuthWrapper from "./components/AuthWrapper.tsx";
+import UnauthenticatedLayout from "./layouts/UnauthenticatedLayout.tsx";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <Routes>
+      <Route element={<UnauthenticatedLayout />}>
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+      </Route>
+
+      <Route element={<AuthWrapper />}>
+        <Route element={<DefaultLayout />}>
+          <Route path="/" element={<PostsListingPage />} />
+          <Route path="/posts/:id" element={<PostDetailsPage />} />
+          <Route path="/posts/add" element={<CreatePostPage />} />
+          <Route path="/posts/:id/edit" element={<EditPost />} />
+          <Route path="/profile/edit" element={<EditProfile />} />
+          <Route path="*" element={<Navigate to="/" />} />
+        </Route>
+      </Route>
+    </Routes>
+  );
 }
 
-export default App
+export default App;
