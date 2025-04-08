@@ -5,12 +5,13 @@ import { CommentServiceClient } from "../proto/comment/service_comment.client";
 import { PostLikeServiceClient } from "../proto/post_like/service_post_like.client";
 
 const transport = new GrpcWebFetchTransport({
-  baseUrl: import.meta.env.VITE_BACKEND_URL,
+	baseUrl: import.meta.env.VITE_BACKEND_URL,
 });
 
 const userClient = new UserServiceClient(transport);
 const postClient = new PostServiceClient(transport);
 const commentClient = new CommentServiceClient(transport);
 const postLikeClient = new PostLikeServiceClient(transport);
+const examClient = new PostLikeServiceClient(transport);
 
-export {userClient, postClient, commentClient, postLikeClient };
+export { userClient, postClient, commentClient, postLikeClient };
